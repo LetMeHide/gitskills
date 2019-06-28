@@ -35,4 +35,21 @@ $ pwd //显示一下目录路径
 
 6 $ rm test.txt //删除文件
  $ git rm test.txt //提交删除文件
-7 $ git push -u origin master //本地文件上传到远程文件
+7.$ git push -u origin master //本地文件上传到远程文件
+
+8.$ git remote -v //查看远程分支
+origin  git@github.com:username/Animations.git (fetch)
+origin  git@github.com:username/Animations.git (push)
+ $ git fetch origin master:temp //使用如下命令可以在本地新建一个temp分支，并将远程origin仓库的master分支代码下载到本地temp分支
+ $ git diff temp //用如下命令来比较本地代码与刚刚从远程下载下来的代码的区别
+ $ git merge temp //对比区别之后，如果觉得没有问题，可以使用如下命令进行代码合并
+ 
+ $ git branch -d temp //如果temp分支不想要保留，可以使用如下命令删除该分支
+ 
+9.git branch -a //查看远程分支，带有“*”号的表示当前分支
+ git branch //查看本地分支
+
+
+git checkout -b v1 origin/v1 // 切换分支命令
+# 切换回master
+git checkout master
