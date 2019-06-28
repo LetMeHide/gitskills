@@ -33,3 +33,5 @@ $ pwd //显示一下目录路径
 
 总之，就是让这个文件回到最近一次git commit或git add时的状态。
 
+jixuceshiyixa 
+
