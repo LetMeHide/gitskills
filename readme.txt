@@ -16,5 +16,6 @@ $ pwd //显示一下目录路径
   $ git commit -m "add distributed" //提交文件，后面是描述
   
   版本回退
-  $ git log //先看下提交日志
+  $ git log //先看下提交日志    
+  dfs
 
