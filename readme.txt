@@ -47,9 +47,8 @@ origin  git@github.com:username/Animations.git (push)
  $ git branch -d temp //如果temp分支不想要保留，可以使用如下命令删除该分支
  
 9.git branch -a //查看远程分支，带有“*”号的表示当前分支
- git branch //查看本地分支
-
-
-git checkout -b v1 origin/v1 // 切换分支命令
-# 切换回master
-git checkout master
+  git branch //查看本地分支
+  git checkout master // 切换分支命令
+  
+  $ git branch -d //删除本地分支
+  $ git push origin --delete // 删除远程分支
