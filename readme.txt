@@ -35,4 +35,4 @@ $ pwd //显示一下目录路径
 
 6 $ rm test.txt //删除文件
  $ git rm test.txt //提交删除文件
-
+7 $ git push -u origin master //本地文件上传到远程文件
