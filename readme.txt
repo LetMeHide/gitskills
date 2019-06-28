@@ -33,5 +33,6 @@ $ pwd //显示一下目录路径
 
 总之，就是让这个文件回到最近一次git commit或git add时的状态。
 
-jixuceshiyixa 
+6 $ rm test.txt //删除文件
+ $ git rm test.txt //提交删除文件
 
