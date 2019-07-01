@@ -53,3 +53,9 @@ origin  git@github.com:username/Animations.git (push)
   $ git branch -d //删除本地分支
   $ git push origin --delete // 删除远程分支
 git clone git@github.com:martin-meng/yyy-2.git//远程仓库导入到本地
+
+10.批量删除
+先手动删除文件
+$ git add .
+$ git commit -m "clear"
+$ git push
