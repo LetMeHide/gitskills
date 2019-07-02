@@ -36,7 +36,8 @@ $ pwd //显示一下目录路径
 6 $ rm test.txt //删除文件
  $ git rm test.txt //提交删除文件
 7.$ git push -u origin master //本地文件上传到远程文件
-
+$ git remote set-url origin +地址
+$ git push -u origin master
 8.$ git remote -v //查看远程分支
 origin  git@github.com:username/Animations.git (fetch)
 origin  git@github.com:username/Animations.git (push)
