@@ -1,0 +1,43 @@
+
+db.gctest.find({ AddDate : { $gte : ISODate("2019-06-01T00:00:00+08:00"), $lte : ISODate("2019-06-02T00:00:00+08:00") } } ).forEach(function(user) {
+    var matchReg = /"template_id": "(\S*)",/;///(?="template_id": ").*?(?=",)/;
+    //print(matchReg);
+    //user.Content=strMatch.match(/(?<=template_id": ").*?(?=",)/)
+    var a  = user.Content.match(matchReg)[1] == null?"":user.Content.match(matchReg)[1].toString();
+    //user.Content = user.Content.replace(/^([^s]*)"template_id"/, "111");
+    print(a);
+    
+    db.gctest.update({"_id":user._id},{$set:{"Content1":a }});
+ });//截取字段里的字符串并更新
+ 
+ 
+ 
+ 
+db.ZM_WxPLAN.find({ AddDate : { $gte : ISODate("2019-06-01T00:00:00+08:00"), $lt : ISODate("2019-07-01T00:00:00+08:00") } });
+db.ZM_WxPLAN.find({Content:{$regex:"pQJBT7FQZJh5gGhBTyIu5rRv"}}, { Content: 1});
+
+db.ZM_WxPLAN.aggregate( [
+                        { $match : { AddDate : { $gte : ISODate("2019-06-01T00:00:00+08:00"), $lte : ISODate("2019-06-02T00:00:00+08:00") } } },
+                        { $group: { _id: {Content:{$regex:"pQJBT7FQZJh5gGhBTyIu5rRv"}}, count: { $sum: 1 } } }
+                       ] );
+					   
+db.gctest.find({Content1:""});//{Content:{$regex:"\"template_id\":\""}}
+db.gctest.find({Content1:{"$ne":"", $exists:true}});
+db.gctest.find({Content:{$regex:"\"template_id\""}});
+db.gctest.find({Content:{$regex:"\"template_id\":\""}});
+
+db.gctest.aggregate( [
+                        { $match : {Content:{$regex:"\"template_id\""}} },
+                        { $group: { _id: '$Content1', count: { $sum: 1 } } }
+                       ] );
+					   
+					   db.gctest.find({Content:{$regex:"\"template_id\":\""}}).forEach(function(user) {
+    var matchReg = /"template_id":"(\S*)","url"/;///(?="template_id": ").*?(?=",)/;"template_id": "
+    print(matchReg);
+    //user.Content=strMatch.match(/(?<=template_id": ").*?(?=",)/)
+    var a  = user.Content.match(matchReg) == null?"":user.Content.match(matchReg)[1].toString();
+    //user.Content = user.Content.replace(/^([^s]*)"template_id"/, "111");
+    //print(a);
+    
+    db.gctest.update({"_id":user._id},{$set:{"Content1":a }});
+ });//截取字段里的字符串并更新
